@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>fastapi server part1</title>
-    <script src="./index.js"></script>
+    <script src="../static/index.js" defer></script>
   </head>
   <body>
     <h1>{{ welcome_message }}</h1>
-    <form id="my_form">
+    <form id = "form">
       <label for="hour">Choose a hour</label>
       <select id="hour">
         <option>1</option>
@@ -29,8 +29,8 @@
 
       <label for="am_pm">Choose a hour</label>
       <select id="am_pm">
-        <option>"AM"</option>
-        <option>"PM"</option>
+        <option>AM</option>
+        <option>PM</option>
       </select>
       <br>
       <input type="submit" value="check number of events on this date">
