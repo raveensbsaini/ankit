@@ -62,13 +62,13 @@ def root(request:Request):
 </html>
 
     """
-    return temp.TemplateResponse("index.html",{"request":request,**pass_data})
-@app.get("/data")
+# response_class=HTMLResponse)    
+@app.get("/data",response_class = HTMLResponse)
 def data(hour:int,am_pm:str):
     print("hour",hour)
     print("am_pm",am_pm)
     try:
-        con = sqlite3.connect("/home/raveensbsaini/.local/share/EventTracker/database.db",check_same_thread = False)
+        con = sqlite3.connect("/.local/share/EventTracker/database.db",check_same_thread = False)
         cur = con.cursor()
         result = cur.execute("select count(*) from events")
         result = result.fetchone()
