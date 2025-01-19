@@ -67,15 +67,21 @@ def root(request:Request):
 def data(hour:int,am_pm:str):
     print("hour",hour)
     print("am_pm",am_pm)
-    try:
-        con = sqlite3.connect("/.local/share/EventTracker/database.db",check_same_thread = False)
-        cur = con.cursor()
-        result = cur.execute("select count(*) from events")
-        result = result.fetchone()
-        print("result",result,"type_of_result",type(result))
-        print(list(result))
-    except Exception as e:
-        return e
+    
+    con = sqlite3.connect("/root/.local/share/EventTracker/database.db",check_same_thread = False)
+
+    cur = con.cursor()
+    # assert False,"con.cursor"
+    result = cur.execute("select count(*) from events")
+    # assert False,"cur.execute"
+    result = result.fetchone()
+    # assert False,"result.fetchone"
+    print("result",result,"type_of_result",type(result))
+    print(list(result))
+    # assert False,"print(result)"
+    # except Exception as e:
+    #     print("e",e)
+    #     return str(e)
     return f"The count of events in  {hour} {am_pm} is equall to {result[0]}"
     # return "welcome to data route"
     # open database
