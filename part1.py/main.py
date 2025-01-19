@@ -18,7 +18,50 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 temp = Jinja2Templates(directory="templates")
 @app.get("/",response_class=HTMLResponse)
 def root(request:Request):
-    pass_data = {"welcome_message":"welcome to part1. select an time to which you want to know count of events "}
+    welcome_message = "welcome to part1. select an time to which you want to know count of events "
+    return f"""
+        <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fastapi server part1</title>
+    <script src="../static/index.js" defer></script>
+  </head>
+  <body>
+    <h1>{ welcome_message }</h1>
+    <form id = "form">
+      <label for="hour">Choose a hour</label>
+      <select id="hour">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+       </select>
+      <br>
+
+      <label for="am_pm">Choose a hour</label>
+      <select id="am_pm">
+        <option>AM</option>
+        <option>PM</option>
+      </select>
+      <br>
+      <input type="submit" value="check number of events on this date">
+
+    </form>
+  </body>
+</html>
+
+    """
     return temp.TemplateResponse("index.html",{"request":request,**pass_data})
 @app.get("/data")
 def data(hour:int,am_pm:str):
