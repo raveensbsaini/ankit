@@ -1,0 +1,1 @@
+import{b as t,a as m}from"../chunks/Bgn3cEzN.js";import"../chunks/CUu2oY60.js";import{p as s,a as n,n as r}from"../chunks/BnxoNJBq.js";import{p as i,i as f}from"../chunks/LuosXQNV.js";function d(e,p){s(p,!1);let o=i.params.username;f(),r();var a=t();a.nodeValue=`Welcome: ${o??""}`,m(e,a),n()}export{d as component};
