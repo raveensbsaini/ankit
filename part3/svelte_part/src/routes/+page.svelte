@@ -1,16 +1,8 @@
 <script>
-  import { onMount } from "svelte";
-  
-  export let data;
-  console.log(data)
   function on_submit(){
     console.log("This is another function")
   }
-  onMount(
-  function on_submit(){
-    console.log("clicked")
-  })
-  </script>
+</script>
 <form on:submit = { on_submit }>
   <h1>Please select time</h1>
   <select>
