@@ -5,6 +5,6 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	server : {
 		host: "0.0.0.0",
-		allowedHosts: ["ankit-5kg7.onrender.com"]
+		allowedHosts: ["ankit-5kg7.onrender.com",'gfrbrebar.shop']
 	}
 });
